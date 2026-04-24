@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: your-gcp-project-id
+  PROJECT_ID: aurahealth-ai-494309
   REGION: us-central1
   SERVICE_NAME: aurahealth-api
 
