@@ -1,0 +1,29 @@
+# Dependency directories
+node_modules/
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+build/
+.next/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Keep Repo < 1MB
+# Exclude large assets or data files
+data/
+assets/large/
+*.mp4
+*.png
+*.jpg
+*.jpeg

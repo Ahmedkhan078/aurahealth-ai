@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraHealth AI - Metabolic Tracker</title>
+    <meta name="description" content="AI-powered smart nutrition and metabolic tracking.">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Gradients -->
+    <div class="bg-gradient bg-gradient-1"></div>
+    <div class="bg-gradient bg-gradient-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar glassmorphism">
+        <div class="nav-content">
+            <div class="logo">
+                <i data-lucide="activity" class="icon-accent"></i>
+                <span class="logo-text">AuraHealth<span class="accent-text">.AI</span></span>
+            </div>
+            <button class="btn-outline">Connect Device</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="grid-layout">
+            
+            <!-- Left Column - Hero -->
+            <div class="hero-section animate-fade-in">
+                <div class="badge">Powered by Gemini 3 Flash</div>
+                <h1 class="hero-title">
+                    Optimize Your <br/>
+                    <span class="gradient-text">Metabolism.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Upload a picture of your meal. Our Vision Agent calculates volumetric mass and macronutrients instantly to minimize your nutritional gap.
+                </p>
+                
+                <div class="button-group">
+                    <button id="scanBtn" class="btn-primary shadow-glow">
+                        <i data-lucide="camera"></i>
+                        <span>Scan Meal</span>
+                    </button>
+                    <button class="btn-secondary glassmorphism">
+                        <i data-lucide="trending-up"></i>
+                        <span>View Plan</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Column - App Interface Mockup -->
+            <div class="app-mockup animate-fade-in delay-200">
+                <div class="glass-card mockup-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i data-lucide="zap" class="icon-yellow"></i>
+                            <span>Live Analysis</span>
+                        </h3>
+                        <span class="tag">Auto-Sync</span>
+                    </div>
+
+                    <div id="dropZone" class="drop-zone">
+                        <div id="dropZoneContent" class="drop-content">
+                            <i data-lucide="camera" class="icon-large"></i>
+                            <p>Drop image or click to browse</p>
+                        </div>
+                        <div id="loadingIndicator" class="loading-indicator hidden">
+                            <div class="spinner"></div>
+                            <p class="pulse-text">Running Volumetric Estimation...</p>
+                        </div>
+                    </div>
+
+                    <div id="analysisResult" class="analysis-result hidden animate-fade-in">
+                        <p class="terminal-text">
+                            <span class="accent-text bold">&gt; GEMINI VISION AGENT:</span><br/>
+                            <span id="resultText"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
