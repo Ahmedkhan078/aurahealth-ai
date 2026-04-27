@@ -1,5 +1,7 @@
 # AuraHealth AI
 
+![AuraHealth UI Screenshot](docs/ui_screenshot.png)
+
 AuraHealth AI is a web-first application acting as a smart nutrition and metabolic tracking platform.
 
 ## Agentic Data Flow
