@@ -1,6 +1,10 @@
 import os
-import vertexai
-from vertexai.generative_models import GenerativeModel, Part
+try:
+    import vertexai
+    from vertexai.generative_models import GenerativeModel, Part
+    VERTEX_AVAILABLE = True
+except ImportError:
+    VERTEX_AVAILABLE = False
 
 # Note: In production, ensure GOOGLE_APPLICATION_CREDENTIALS are set correctly.
 # project_id = os.environ.get("GOOGLE_CLOUD_PROJECT", "your-project-id")

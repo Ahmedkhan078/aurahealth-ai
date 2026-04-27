@@ -3,6 +3,8 @@ from pydantic import BaseModel
 from typing import List, Optional
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+import os
 
 # Import logic modules
 from logic.optimizer import optimize_meal_plan, FoodItem, NutritionalTarget
@@ -63,6 +65,11 @@ def optimize_plan(req: OptimizeRequest):
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Optimizer Error: {str(e)}")
+
+# Mount static files
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+web_dir = os.path.join(BASE_DIR, "web")
+app.mount("/", StaticFiles(directory=web_dir, html=True), name="web")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
